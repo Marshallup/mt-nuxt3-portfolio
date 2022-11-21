@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "TT Firs Neue";
+  src: url("@/assets/fonts/TTFirsNeue-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TT Firs Neue";
+  src: url("@/assets/fonts/TTFirsNeue-Medium.woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "TT Firs Neue";
+  src: url("@/assets/fonts/TTFirsNeue-Bold.woff2");
+  font-weight: 700;
+}
+
+:root {
+  --primary-200: #69fdf4;
+  --primary-400: #fdc5f1;
+}
+
+html,
+body {
+  @apply font-ttFirsNeue;
+}
+
+body {
+  @apply overflow-hidden;
+}
+
+@layer components {
+  .main-gradient {
+    @apply bg-gradient-to-r from-primary-200 to-primary-400;
+  }
+  .main-gradient-text {
+    @apply uppercase text-transparent bg-clip-text main-gradient;
+  }
+
+  /* .main-border-gradient {
+    @apply relative bg-secondary-600 rounded-full p-2 z-0;
+  }
+
+  .main-border-gradient:before {
+    content: "";
+
+    @apply absolute w-full h-full top-0 left-0 main-gradient rounded-full -z-20;
+  }
+
+  .main-border-gradient:after {
+    content: "";
+
+    @apply absolute w-[calc(100%-5px)] h-[calc(100%-5px)] top-1/2 left-1/2 rounded-full bg-secondary-600 -translate-x-1/2 -translate-y-1/2 -z-10;
+  } */
+}
