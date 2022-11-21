@@ -3,11 +3,10 @@
 <template>
   <div>
     <SectionMain />
-    <SectionMain />
-    <SectionMain />
-    <SectionMain />
-    <SectionMain />
-    <SectionMain />
+    <div class="w-full h-[350px]" />
+    <div class="w-full h-[350px]" />
+    <div class="w-full h-[350px]" />
+    <div class="w-full h-[350px]" />
   </div>
 </template>
 

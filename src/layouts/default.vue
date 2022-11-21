@@ -3,10 +3,12 @@
 <template>
   <div class="min-h-screen flex flex-col bg-secondary-600 text-regular">
     <Header />
-    <main class="grow">
-      <slot />
-    </main>
-    <Footer />
+    <SmoothScrollBar>
+      <main class="grow">
+        <slot />
+      </main>
+      <Footer />
+    </SmoothScrollBar>
   </div>
 </template>
 

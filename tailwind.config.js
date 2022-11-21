@@ -24,7 +24,7 @@ module.exports = {
       colors: {
         'primary-200': 'var(--primary-200)',
         'primary-400': 'var(--primary-400)',
-        'secondary-600': '#141F31',
+        'secondary-600': 'var(--secondary-600)',
         regular: '#ffffff',
       },
       height: {

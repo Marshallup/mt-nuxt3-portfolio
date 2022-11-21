@@ -1,0 +1,106 @@
+<script setup lang="ts">
+interface LogoIconProps {
+  currentColor?: boolean;
+}
+
+defineProps<LogoIconProps>();
+</script>
+
+<template>
+  <svg
+    width="70"
+    height="20"
+    viewBox="0 0 70 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 20L7.6501 0H12.7021L5.05195 20H0Z"
+      fill="white"
+      :class="{ 'fill-current': currentColor }"
+    />
+    <path
+      d="M0 20L7.6501 0H12.7021L5.05195 20H0Z"
+      fill="url(#paint0_linear_418_270)"
+      :class="{ 'fill-current': currentColor }"
+    />
+    <path
+      d="M13.0031 4.85714V0H31.0458V4.85714H24.6948V20H19.3542V4.85714H13.0031Z"
+      fill="white"
+      :class="{ 'fill-current': currentColor }"
+    />
+    <path
+      d="M13.0031 4.85714V0H31.0458V4.85714H24.6948V20H19.3542V4.85714H13.0031Z"
+      fill="url(#paint1_linear_418_270)"
+      :class="{ 'fill-current': currentColor }"
+    />
+    <path
+      d="M33.1974 20V0H40.7032L44.8891 10.2857H45.6108L49.7967 0H57.3025V20H51.9618V8.57143L52.3948 6H52.1062L48.2089 15.4286H42.2909L38.3937 6H38.105L38.5381 8.57143V20H33.1974Z"
+      fill="white"
+      :class="{ 'fill-current': currentColor }"
+    />
+    <path
+      d="M33.1974 20V0H40.7032L44.8891 10.2857H45.6108L49.7967 0H57.3025V20H51.9618V8.57143L52.3948 6H52.1062L48.2089 15.4286H42.2909L38.3937 6H38.105L38.5381 8.57143V20H33.1974Z"
+      fill="url(#paint2_linear_418_270)"
+      :class="{ 'fill-current': currentColor }"
+    />
+    <path
+      d="M60.4735 5.71429V2.85714H63.7933V0H66.6801V2.85714H70V5.71429H67.5462L69.4226 8.28571L66.9688 10L65.2367 7.14286L63.5046 10L61.0508 8.28571L62.9273 5.71429H60.4735Z"
+      fill="white"
+      :class="{ 'fill-current': currentColor }"
+    />
+    <path
+      d="M60.4735 5.71429V2.85714H63.7933V0H66.6801V2.85714H70V5.71429H67.5462L69.4226 8.28571L66.9688 10L65.2367 7.14286L63.5046 10L61.0508 8.28571L62.9273 5.71429H60.4735Z"
+      fill="url(#paint3_linear_418_270)"
+      :class="{ 'fill-current': currentColor }"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_418_270"
+        x1="-1.67681"
+        y1="14.3872"
+        x2="84.4032"
+        y2="12.4142"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.141166" stop-color="#69FDF4" />
+        <stop offset="0.896551" stop-color="#FDC5F1" />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_418_270"
+        x1="-1.67681"
+        y1="14.3872"
+        x2="84.4032"
+        y2="12.4142"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.141166" stop-color="#69FDF4" />
+        <stop offset="0.896551" stop-color="#FDC5F1" />
+      </linearGradient>
+      <linearGradient
+        id="paint2_linear_418_270"
+        x1="-1.67681"
+        y1="14.3872"
+        x2="84.4032"
+        y2="12.4142"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.141166" stop-color="#69FDF4" />
+        <stop offset="0.896551" stop-color="#FDC5F1" />
+      </linearGradient>
+      <linearGradient
+        id="paint3_linear_418_270"
+        x1="-1.67681"
+        y1="14.3872"
+        x2="84.4032"
+        y2="12.4142"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.141166" stop-color="#69FDF4" />
+        <stop offset="0.896551" stop-color="#FDC5F1" />
+      </linearGradient>
+    </defs>
+  </svg>
+</template>
+
+<style scoped></style>
