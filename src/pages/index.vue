@@ -3,10 +3,8 @@
 <template>
   <div>
     <SectionMain />
-    <div class="w-full h-[350px]" />
-    <div class="w-full h-[350px]" />
-    <div class="w-full h-[350px]" />
-    <div class="w-full h-[350px]" />
+    <SectionTextCarousel />
+    <SectionMyProjects />
   </div>
 </template>
 

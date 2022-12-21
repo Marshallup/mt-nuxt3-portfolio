@@ -37,6 +37,9 @@ module.exports = {
         big: '10rem',
         '10xl': '8rem',
         '5.5xl': '2.5rem'
+      },
+      spacing: {
+        h: '90px'
       }
     },
   },

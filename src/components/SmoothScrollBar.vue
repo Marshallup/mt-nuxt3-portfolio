@@ -1,30 +1,43 @@
 <script setup lang="ts">
-import { Ref } from "vue";
 import SmoothScrollBar from "smooth-scrollbar";
+import {
+  TSmoothScrollBar,
+  IProvideSmoothScrollBar,
+  onMountedScrollBarCb,
+} from "@/types/smoothScrollBar";
 
-export type TSmoothScrollBar = SmoothScrollBar | null;
-
-export interface IProvideSmoothScrollBar {
-  smoothScrollBar: Ref<TSmoothScrollBar>;
-  stopScrolling: () => void;
-  initScrolling: () => void;
-}
+const { $gsap, $ScrollTrigger } = useNuxtApp();
 
 const smoothScrollBar = ref<TSmoothScrollBar>(null);
 const smoothContainer = ref<HTMLDivElement>(null);
-const stopScrollingStatus = ref(false);
 
-const damping = 0.02;
+function initOnMountedScrollBar() {
+  const cbs: Array<onMountedScrollBarCb> = [];
 
-function stopScrolling() {
-  if (unref(smoothScrollBar)) {
-    console.log("stop");
-    unref(smoothScrollBar).options.wheelEventTarget;
-    stopScrollingStatus.value = true;
-    // console.log(unref(smoothScrollBar).);
-    // unref(smoothScrollBar).track.xAxis.element.remove();
+  return {
+    onMountedScrollBar: (cb: onMountedScrollBarCb) => {
+      cbs.push(cb);
+    },
+    onTriggerScrollbar: (smoothScrollBarEx: SmoothScrollBar) => {
+      cbs.forEach((cb) => cb(smoothScrollBarEx));
+      cbs.length = 0;
+    },
+  };
+}
+
+function updateGsapMarkersPosition() {
+  if (document.querySelector(".gsap-marker-scroller-start")) {
+    const markers = $gsap.utils.toArray('[class *= "gsap-marker"]');
+
+    unref(smoothScrollBar).addListener(({ offset }) => {
+      $gsap.set(markers, { marginTop: -offset.y });
+    });
   }
 }
+
+const { onMountedScrollBar, onTriggerScrollbar } = initOnMountedScrollBar();
+
+const damping = 0.02;
 
 function initScrolling() {
   if (unref(smoothScrollBar)) {
@@ -36,13 +49,25 @@ onMounted(() => {
   if (process.client) {
     smoothScrollBar.value = SmoothScrollBar.init(unref(smoothContainer), {
       damping,
+      delegateTo: document.body,
     });
 
-    unref(smoothScrollBar).addListener((status) => {
-      if (unref(stopScrollingStatus)) {
-        unref(smoothScrollBar).setPosition(status.offset.x, status.offset.y);
-      }
+    $ScrollTrigger.scrollerProxy(unref(smoothContainer), {
+      scrollTop(value) {
+        if (arguments.length) {
+          unref(smoothScrollBar).scrollTop = value; // setter
+        }
+        return unref(smoothScrollBar).scrollTop; // getter
+      },
     });
+
+    $ScrollTrigger.defaults({
+      scroller: unref(smoothContainer),
+    });
+
+    unref(smoothScrollBar).addListener($ScrollTrigger.update);
+
+    onTriggerScrollbar(unref(smoothScrollBar) as SmoothScrollBar);
   }
 });
 
@@ -51,9 +76,11 @@ provide<
     smoothScrollBar: typeof smoothScrollBar;
   }
 >("smoothScrollBar", {
+  smoothContainer,
   smoothScrollBar,
-  stopScrolling,
   initScrolling,
+  onMountedScrollBar,
+  updateGsapMarkersPosition,
 });
 </script>
 
