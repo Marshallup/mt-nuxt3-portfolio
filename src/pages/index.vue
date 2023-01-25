@@ -2,9 +2,16 @@
 
 <template>
   <div>
+    <!-- <SectionMyProjects /> -->
     <SectionMain />
-    <SectionTextCarousel />
-    <SectionMyProjects />
+    <SectionTextCarousel>
+      <SectionMyProjects />
+    </SectionTextCarousel>
+
+    <div class="h-screen">
+
+    </div>
+    <!-- <SectionMyProjects /> -->
   </div>
 </template>
 

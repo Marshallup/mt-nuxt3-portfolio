@@ -103,7 +103,7 @@ onMountedSmothScrollBar(($gsap, { updateGsapMarkersPosition }) => {
         scale: 0,
       },
       {
-        duration: 30,
+        duration: 23,
         y: 0,
         opacity: 1,
         scale: 1,

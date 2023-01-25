@@ -23,7 +23,10 @@
 :root {
   --primary-200: #69fdf4;
   --primary-400: #fdc5f1;
+  --primary-100: #f1f1f1;
   --secondary-600: #141f31;
+  --secondary-100: #acacac;
+  --secondary-150: #d9d9d9;
 }
 
 html,
@@ -41,6 +44,10 @@ body {
   }
   .main-gradient-text {
     @apply uppercase text-transparent bg-clip-text main-gradient;
+  }
+  .bg-main-gradient {
+    background: linear-gradient(89.24deg, #69fdf4 -1.75%, #fdc5f1 108.59%),
+      #69fdf4;
   }
 
   /* .main-border-gradient {

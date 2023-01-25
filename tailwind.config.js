@@ -25,6 +25,9 @@ module.exports = {
         'primary-200': 'var(--primary-200)',
         'primary-400': 'var(--primary-400)',
         'secondary-600': 'var(--secondary-600)',
+        'primary-100': 'var(--primary-100)',
+        'secondary-100': '#acacac',
+        'secondary-150': '#d9d9d9',
         regular: '#ffffff',
       },
       height: {
